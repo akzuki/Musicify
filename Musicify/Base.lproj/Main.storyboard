@@ -17,6 +17,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tkH-JL-4Hr">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.46782968489999999" blue="0.56202526620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="nJr-L9-0Ru" kind="relationship" relationship="rootViewController" id="apr-ui-tyl"/>
@@ -26,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="-447" y="-98"/>
         </scene>
-        <!--View Controller-->
+        <!--Latest songs-->
         <scene sceneID="nxY-Gc-Ocj">
             <objects>
-                <viewController id="nJr-L9-0Ru" customClass="ViewController" customModule="Musicify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nJr-L9-0Ru" customClass="LatestSongsViewController" customModule="Musicify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hdV-66-lsM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,6 +42,68 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bm5-Y0-fUC">
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LatestSongTableViewCell" rowHeight="200" id="OV7-xG-8rV" customClass="LatestSongTableViewCell" customModule="Musicify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OV7-xG-8rV" id="fvv-hm-bPb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t3b-Wb-ajZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.66666666666666"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4c5-Xq-yzd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.66666666666666"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z7-jq-CT3">
+                                                    <rect key="frame" x="12" y="193.66666666666666" width="351" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-1N-UBa">
+                                                    <rect key="frame" x="12" y="191.66666666666666" width="351" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5a1-PD-sUA">
+                                                    <rect key="frame" x="12" y="189.66666666666666" width="351" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5a1-PD-sUA" firstAttribute="trailing" secondItem="2Z7-jq-CT3" secondAttribute="trailing" id="0az-jP-8ii"/>
+                                                <constraint firstItem="2Z7-jq-CT3" firstAttribute="leading" secondItem="fvv-hm-bPb" secondAttribute="leading" constant="12" id="8Jz-Kf-DuM"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Z7-jq-CT3" secondAttribute="trailing" constant="12" id="AS2-ad-gS9"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Z7-jq-CT3" secondAttribute="bottom" constant="6" id="Co1-3w-ZK3"/>
+                                                <constraint firstItem="4c5-Xq-yzd" firstAttribute="bottom" secondItem="t3b-Wb-ajZ" secondAttribute="bottom" id="KLB-Qk-Cuc"/>
+                                                <constraint firstItem="4c5-Xq-yzd" firstAttribute="trailing" secondItem="t3b-Wb-ajZ" secondAttribute="trailing" id="PxR-Ec-69T"/>
+                                                <constraint firstAttribute="bottom" secondItem="t3b-Wb-ajZ" secondAttribute="bottom" id="Q8c-CH-Co2"/>
+                                                <constraint firstItem="5Eb-1N-UBa" firstAttribute="leading" secondItem="2Z7-jq-CT3" secondAttribute="leading" id="RxU-r2-tYh"/>
+                                                <constraint firstItem="5a1-PD-sUA" firstAttribute="leading" secondItem="2Z7-jq-CT3" secondAttribute="leading" id="S8V-Pv-oQh"/>
+                                                <constraint firstItem="4c5-Xq-yzd" firstAttribute="top" secondItem="t3b-Wb-ajZ" secondAttribute="top" id="SDX-7o-uGz"/>
+                                                <constraint firstItem="5Eb-1N-UBa" firstAttribute="top" secondItem="5a1-PD-sUA" secondAttribute="bottom" constant="2" id="TWw-Ao-cj8"/>
+                                                <constraint firstItem="t3b-Wb-ajZ" firstAttribute="leading" secondItem="fvv-hm-bPb" secondAttribute="leading" id="XLc-kb-hxv"/>
+                                                <constraint firstItem="2Z7-jq-CT3" firstAttribute="top" secondItem="5Eb-1N-UBa" secondAttribute="bottom" constant="2" id="deV-p2-Z46"/>
+                                                <constraint firstItem="t3b-Wb-ajZ" firstAttribute="top" secondItem="fvv-hm-bPb" secondAttribute="top" id="gWP-Je-lRC"/>
+                                                <constraint firstItem="4c5-Xq-yzd" firstAttribute="leading" secondItem="t3b-Wb-ajZ" secondAttribute="leading" id="jaq-vm-tvr"/>
+                                                <constraint firstAttribute="trailing" secondItem="t3b-Wb-ajZ" secondAttribute="trailing" id="up7-Pd-MKX"/>
+                                                <constraint firstItem="5Eb-1N-UBa" firstAttribute="trailing" secondItem="2Z7-jq-CT3" secondAttribute="trailing" id="v8I-f1-D9h"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="2Z7-jq-CT3" id="aNp-RR-xgD"/>
+                                            <outlet property="releaseYearLabel" destination="5Eb-1N-UBa" id="WP1-5m-n86"/>
+                                            <outlet property="songNameLabel" destination="5a1-PD-sUA" id="OeL-CR-vHX"/>
+                                            <outlet property="thumbnailImageView" destination="t3b-Wb-ajZ" id="sld-pR-hi0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +115,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8gE-XX-a9N"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Pe3-T2-9qV"/>
+                    <navigationItem key="navigationItem" title="Latest songs" id="Pe3-T2-9qV"/>
+                    <connections>
+                        <outlet property="latestSongsTableView" destination="Bm5-Y0-fUC" id="Qfg-2z-W7F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgB-zQ-dNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

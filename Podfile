@@ -6,7 +6,8 @@ target 'Musicify' do
   use_frameworks!
 
   # Pods for Musicify
-  pod 'Moya', '~> 12.0'
+  pod 'Moya', '12.0'
+  pod 'Kingfisher', '5.0.1'
   
   target 'MusicifyTests' do
     inherit! :search_paths
