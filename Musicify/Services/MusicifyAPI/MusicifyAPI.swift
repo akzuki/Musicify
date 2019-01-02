@@ -41,28 +41,32 @@ enum MusicifyAPI: TargetType {
                         "name": "Back To You",
                         "artist": "Selena Gomez",
                         "releaseYear": "2018",
-                        "thumbnailURL": "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg"
+                        "thumbnailURL": "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg",
+                        "lyricsURL": "https://www.azlyrics.com/lyrics/selenagomez/backtoyou.html"
                     },
                     {
                         "id": 2,
                         "name": "Dance To This",
                         "artist": "Troye Sivan ft Ariana Grande",
                         "releaseYear": "2018",
-                        "thumbnailURL": "https://i.ytimg.com/vi/bhxhNIQBKJI/maxresdefault.jpg"
+                        "thumbnailURL": "https://i.ytimg.com/vi/bhxhNIQBKJI/maxresdefault.jpg",
+                        "lyricsURL": "https://www.azlyrics.com/lyrics/troyesivan/dancetothis.html"
                     },
                     {
                         "id": 3,
                         "name": "Lost In Japan",
                         "artist": "Shawn Mendes",
                         "releaseYear": "2018",
-                        "thumbnailURL": "https://i.ytimg.com/vi/ycy30LIbq4w/maxresdefault.jpg"
+                        "thumbnailURL": "https://i.ytimg.com/vi/ycy30LIbq4w/maxresdefault.jpg",
+                        "lyricsURL": "https://www.azlyrics.com/lyrics/shawnmendes/lostinjapan.html"
                     },
                     {
                         "id": 4,
                         "name": "My My My!",
                         "artist": "Troye Sivan",
                         "releaseYear": "2018",
-                        "thumbnailURL": "https://i.ytimg.com/vi/k5TqNsr6YuQ/maxresdefault.jpg"
+                        "thumbnailURL": "https://i.ytimg.com/vi/k5TqNsr6YuQ/maxresdefault.jpg",
+                        "lyricsURL": "https://www.azlyrics.com/lyrics/troyesivan/mymymy.html"
                     }
                 ]
                 """

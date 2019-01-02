@@ -26,7 +26,8 @@ class SongTests: XCTestCase {
                                 name: "Back To You",
                                 artist: "Selena Gomez",
                                 releaseYear: "2018",
-                                thumbnailURL: URL(string: "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg")!
+                                thumbnailURL: URL(string: "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg")!,
+                                lyricsURL: URL(string: "https://www.azlyrics.com/lyrics/selenagomez/backtoyou.html")!
                             )
         
         let actualSongJSON = """
@@ -35,7 +36,8 @@ class SongTests: XCTestCase {
                 "name": "Back To You",
                 "artist": "Selena Gomez",
                 "releaseYear": "2018",
-                "thumbnailURL": "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg"
+                "thumbnailURL": "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg",
+                "lyricsURL": "https://www.azlyrics.com/lyrics/selenagomez/backtoyou.html"
             }
         """
         
@@ -56,14 +58,16 @@ class SongTests: XCTestCase {
                 name: "Back To You",
                 artist: "Selena Gomez",
                 releaseYear: "2018",
-                thumbnailURL: URL(string: "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg")!
+                thumbnailURL: URL(string: "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg")!,
+                lyricsURL: URL(string: "https://www.azlyrics.com/lyrics/selenagomez/backtoyou.html")!
             ),
             Song(
                 id: 2,
                 name: "Dance To This",
                 artist: "Troye Sivan ft Ariana Grande",
                 releaseYear: "2018",
-                thumbnailURL: URL(string: "https://i.ytimg.com/vi/bhxhNIQBKJI/maxresdefault.jpg")!
+                thumbnailURL: URL(string: "https://i.ytimg.com/vi/bhxhNIQBKJI/maxresdefault.jpg")!,
+                lyricsURL: URL(string: "https://www.azlyrics.com/lyrics/troyesivan/dancetothis.html")!
             )
         ]
         
@@ -74,14 +78,16 @@ class SongTests: XCTestCase {
                     "name": "Back To You",
                     "artist": "Selena Gomez",
                     "releaseYear": "2018",
-                    "thumbnailURL": "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg"
+                    "thumbnailURL": "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg",
+                    "lyricsURL": "https://www.azlyrics.com/lyrics/selenagomez/backtoyou.html"
                 },
                 {
                     "id": 2,
                     "name": "Dance To This",
                     "artist": "Troye Sivan ft Ariana Grande",
                     "releaseYear": "2018",
-                    "thumbnailURL": "https://i.ytimg.com/vi/bhxhNIQBKJI/maxresdefault.jpg"
+                    "thumbnailURL": "https://i.ytimg.com/vi/bhxhNIQBKJI/maxresdefault.jpg",
+                    "lyricsURL": "https://www.azlyrics.com/lyrics/troyesivan/dancetothis.html"
                 }
             ]
         """

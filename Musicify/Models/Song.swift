@@ -14,6 +14,7 @@ struct Song: Codable {
     let artist: String
     let releaseYear: String
     let thumbnailURL: URL
+    let lyricsURL: URL
 }
 
 extension Song: Equatable {
@@ -23,7 +24,8 @@ extension Song: Equatable {
             lhs.name == rhs.name &&
             lhs.artist == rhs.artist &&
             lhs.releaseYear == rhs.releaseYear &&
-            lhs.thumbnailURL == rhs.thumbnailURL
+            lhs.thumbnailURL == rhs.thumbnailURL &&
+            lhs.lyricsURL == rhs.lyricsURL
         )
     }
 }
