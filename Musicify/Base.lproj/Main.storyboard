@@ -105,11 +105,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Xdw-w7-2fc">
+                                <rect key="frame" x="177.66666666666666" y="423" width="20" height="20"/>
+                                <color key="color" red="1" green="0.46782968489999999" blue="0.56202526620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xdw-w7-2fc" firstAttribute="centerX" secondItem="8gE-XX-a9N" secondAttribute="centerX" id="0SO-cR-Max"/>
                             <constraint firstItem="Bm5-Y0-fUC" firstAttribute="bottom" secondItem="8gE-XX-a9N" secondAttribute="bottom" id="3do-Wy-nmR"/>
                             <constraint firstItem="Bm5-Y0-fUC" firstAttribute="leading" secondItem="8gE-XX-a9N" secondAttribute="leading" id="4Ue-wn-vXT"/>
+                            <constraint firstItem="Xdw-w7-2fc" firstAttribute="centerY" secondItem="8gE-XX-a9N" secondAttribute="centerY" id="AmK-IB-U47"/>
                             <constraint firstItem="Bm5-Y0-fUC" firstAttribute="trailing" secondItem="8gE-XX-a9N" secondAttribute="trailing" id="t13-Lv-6m5"/>
                             <constraint firstItem="Bm5-Y0-fUC" firstAttribute="top" secondItem="8gE-XX-a9N" secondAttribute="top" id="xKC-S4-NbS"/>
                         </constraints>
@@ -118,6 +124,7 @@
                     <navigationItem key="navigationItem" title="Latest songs" id="Pe3-T2-9qV"/>
                     <connections>
                         <outlet property="latestSongsTableView" destination="Bm5-Y0-fUC" id="Qfg-2z-W7F"/>
+                        <outlet property="loadingIndicator" destination="Xdw-w7-2fc" id="spE-Vg-k8c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgB-zQ-dNj" userLabel="First Responder" sceneMemberID="firstResponder"/>

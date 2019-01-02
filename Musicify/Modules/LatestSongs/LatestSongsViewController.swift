@@ -11,6 +11,7 @@ import UIKit
 class LatestSongsViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var latestSongsTableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
