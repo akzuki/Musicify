@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Moya
 
 class LatestSongsViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var latestSongsTableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    fileprivate let musicifyAPIProvider = MoyaProvider<MusicifyAPI>(stubClosure: MoyaProvider.delayedStub(2))
+    fileprivate var latestSongs: [Song] = []
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -20,7 +24,50 @@ class LatestSongsViewController: UIViewController {
         latestSongsTableView.delegate = self
         latestSongsTableView.dataSource = self
         
-        latestSongsTableView.rowHeight = 200
+        latestSongsTableView.rowHeight = 210
+        
+        loadLatestSongs()
+    }
+    
+    fileprivate func loadLatestSongs() {
+        startLoading()
+        musicifyAPIProvider.request(.latestSongs) { [weak self] result in
+            switch result {
+            case .success(let response):
+                let data = response.data
+                guard let songs = try? JSONDecoder().decode([Song].self, from: data) else {
+                    self?.stopLoading()
+                    self?.showError(message: "JSON parsing error")
+                    return
+                }
+                self?.stopLoading()
+                self?.latestSongs = songs
+                self?.latestSongsTableView.reloadData()
+            case .failure(let error):
+                self?.stopLoading()
+                self?.showError(message: "Connection error")
+            }
+        }
+    }
+    
+    fileprivate func startLoading() {
+        loadingIndicator.startAnimating()
+        latestSongsTableView.isHidden = true
+    }
+    
+    fileprivate func stopLoading() {
+        loadingIndicator.stopAnimating()
+        latestSongsTableView.isHidden = false
+    }
+    
+    fileprivate func showError(message: String) {
+        latestSongsTableView.isHidden = true
+        
+        let alertViewController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertViewController.addAction(cancelAction)
+        
+        present(alertViewController, animated: true, completion: nil)
     }
 }
 
@@ -31,20 +78,12 @@ extension LatestSongsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return latestSongs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LatestSongTableViewCell") as! LatestSongTableViewCell
-        
-        let song = Song(
-            id: 1,
-            name: "Back To You",
-            artist: "Selena Gomez",
-            releaseYear: "2018",
-            thumbnailURL: URL(string: "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg")!
-        )
-        
+        let song = latestSongs[indexPath.row]
         cell.configure(song: song)
         
         return cell
@@ -53,6 +92,9 @@ extension LatestSongsViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension LatestSongsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let lyricsURL = latestSongs[indexPath.row].lyricsURL
+        UIApplication.shared.open(lyricsURL, options: [:], completionHandler: nil)
+    }
 }
 
