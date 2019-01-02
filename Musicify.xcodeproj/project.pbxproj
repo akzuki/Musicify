@@ -12,6 +12,8 @@
 		9336A0B321DC722400519700 /* MusicifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0B221DC722400519700 /* MusicifyAPI.swift */; };
 		9336A0B921DC760A00519700 /* SongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0B821DC760A00519700 /* SongTests.swift */; };
 		9336A0BB21DCA0B200519700 /* LatestSongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0BA21DCA0B200519700 /* LatestSongTableViewCell.swift */; };
+		9336A0BD21DCDFEE00519700 /* LatestSongsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0BC21DCDFEE00519700 /* LatestSongsPresenter.swift */; };
+		9336A0C021DCEB3D00519700 /* LatestSongsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0BF21DCEB3D00519700 /* LatestSongsPresenterTests.swift */; };
 		936CDA5921D4E4950079A6B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936CDA5821D4E4950079A6B2 /* AppDelegate.swift */; };
 		936CDA5B21D4E4950079A6B2 /* LatestSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936CDA5A21D4E4950079A6B2 /* LatestSongsViewController.swift */; };
 		936CDA5E21D4E4950079A6B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936CDA5C21D4E4950079A6B2 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		9336A0B221DC722400519700 /* MusicifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicifyAPI.swift; sourceTree = "<group>"; };
 		9336A0B821DC760A00519700 /* SongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTests.swift; sourceTree = "<group>"; };
 		9336A0BA21DCA0B200519700 /* LatestSongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongTableViewCell.swift; sourceTree = "<group>"; };
+		9336A0BC21DCDFEE00519700 /* LatestSongsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsPresenter.swift; sourceTree = "<group>"; };
+		9336A0BF21DCEB3D00519700 /* LatestSongsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsPresenterTests.swift; sourceTree = "<group>"; };
 		936CDA5521D4E4950079A6B2 /* Musicify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936CDA5821D4E4950079A6B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936CDA5A21D4E4950079A6B2 /* LatestSongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			children = (
 				936CDA5A21D4E4950079A6B2 /* LatestSongsViewController.swift */,
 				9336A0BA21DCA0B200519700 /* LatestSongTableViewCell.swift */,
+				9336A0BC21DCDFEE00519700 /* LatestSongsPresenter.swift */,
 			);
 			path = LatestSongs;
 			sourceTree = "<group>";
@@ -144,6 +149,14 @@
 				9336A0B821DC760A00519700 /* SongTests.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9336A0BE21DCEB2700519700 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				9336A0BF21DCEB3D00519700 /* LatestSongsPresenterTests.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		936CDA4C21D4E4950079A6B2 = {
@@ -186,6 +199,7 @@
 		936CDA6C21D4E4980079A6B2 /* MusicifyTests */ = {
 			isa = PBXGroup;
 			children = (
+				9336A0BE21DCEB2700519700 /* Presenters */,
 				9336A0B521DC75E900519700 /* Models */,
 				936CDA6D21D4E4980079A6B2 /* MusicifyTests.swift */,
 				936CDA6F21D4E4980079A6B2 /* Info.plist */,
@@ -445,6 +459,7 @@
 				936CDA5B21D4E4950079A6B2 /* LatestSongsViewController.swift in Sources */,
 				936CDA5921D4E4950079A6B2 /* AppDelegate.swift in Sources */,
 				9336A0B321DC722400519700 /* MusicifyAPI.swift in Sources */,
+				9336A0BD21DCDFEE00519700 /* LatestSongsPresenter.swift in Sources */,
 				9336A0BB21DCA0B200519700 /* LatestSongTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9336A0C021DCEB3D00519700 /* LatestSongsPresenterTests.swift in Sources */,
 				9336A0B921DC760A00519700 /* SongTests.swift in Sources */,
 				936CDA6E21D4E4980079A6B2 /* MusicifyTests.swift in Sources */,
 			);
