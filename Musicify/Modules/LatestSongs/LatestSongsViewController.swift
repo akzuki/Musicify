@@ -41,13 +41,18 @@ class LatestSongsViewController: UIViewController {
                     return
                 }
                 self?.stopLoading()
-                self?.latestSongs = songs
-                self?.latestSongsTableView.reloadData()
+                self?.showLatestSongs(songs: songs)
             case .failure(let error):
                 self?.stopLoading()
                 self?.showError(message: "Connection error")
             }
         }
+    }
+    
+    fileprivate func showLatestSongs(songs: [Song]) {
+        latestSongs = songs
+        latestSongsTableView.isHidden = false
+        latestSongsTableView.reloadData()
     }
     
     fileprivate func startLoading() {
