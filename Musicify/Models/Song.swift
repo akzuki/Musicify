@@ -20,10 +20,10 @@ extension Song: Equatable {
     static func ==(lhs: Song, rhs: Song) -> Bool {
         return (
             lhs.id == rhs.id &&
-                lhs.name == rhs.name &&
-                lhs.artist == rhs.artist &&
-                lhs.releaseYear == rhs.releaseYear &&
-                lhs.thumbnailURL == rhs.thumbnailURL
+            lhs.name == rhs.name &&
+            lhs.artist == rhs.artist &&
+            lhs.releaseYear == rhs.releaseYear &&
+            lhs.thumbnailURL == rhs.thumbnailURL
         )
     }
 }
