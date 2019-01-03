@@ -125,4 +125,43 @@ class LatestSongsViewModelTests: XCTestCase {
         XCTAssertEqual(latestSongsViewModel.latestSongViewModels, [])
         XCTAssertEqual(isLoadingArray, [true, false])
     }
+    
+    func testLoadLatestSongsFailDueToInvalidJSONResponse() {
+        // Invalid JSON response
+        let actualSongsJSON = """
+            [
+                {}
+            ]
+        """
+        
+        let customEndpointClosure = { (target: MusicifyAPI) -> Endpoint in
+            return Endpoint(
+                url: URL(target: target).absoluteString,
+                sampleResponseClosure: { () -> EndpointSampleResponse in
+                    return .networkResponse(200, actualSongsJSON.data(using: .utf8)!)
+            },
+                method: target.method,
+                task: target.task,
+                httpHeaderFields: target.headers
+            )
+        }
+        // Given
+        let mockMusicifyAPI = MoyaProvider<MusicifyAPI>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider.immediatelyStub)
+        let latestSongsViewModel = LatestSongsViewModel(musicifyAPIProvider: mockMusicifyAPI)
+        // When
+        var isLoadingArray: [Bool] = []
+        var didCallLatestSongsDidUpdate = false
+        latestSongsViewModel.isLoading = { isLoadingArray.append($0) }
+        latestSongsViewModel.error = { message in
+            // Assert that error message is correct
+            XCTAssertEqual(message, "JSON parsing error")
+        }
+        latestSongsViewModel.latestSongsDidUpdate = { didCallLatestSongsDidUpdate = true }
+        
+        latestSongsViewModel.loadLatestSongs()
+        // Then
+        XCTAssertFalse(didCallLatestSongsDidUpdate)
+        XCTAssertEqual(latestSongsViewModel.latestSongViewModels, [])
+        XCTAssertEqual(isLoadingArray, [true, false])
+    }
 }
