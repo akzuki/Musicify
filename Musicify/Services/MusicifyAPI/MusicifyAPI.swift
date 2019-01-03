@@ -13,13 +13,13 @@ enum MusicifyAPI: TargetType {
     case latestSongs
     
     var baseURL: URL {
-        return URL(string: "http://localhost:3000")!
+        return URL(string: "https://api.myjson.com/")!
     }
     
     var path: String {
         switch self {
         case .latestSongs:
-            return "/latestSongs"
+            return "/bins/183jfg"
         }
     }
     
