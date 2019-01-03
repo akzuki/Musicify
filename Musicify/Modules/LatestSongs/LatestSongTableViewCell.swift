@@ -25,7 +25,7 @@ class LatestSongTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(song: Song) {
+    func configure(song: SongViewModel) {
         thumbnailImageView.kf.setImage(with: song.thumbnailURL)
         artistLabel.text = song.artist
         releaseYearLabel.text = song.releaseYear

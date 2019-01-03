@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		29BD310883C4E49A86C7E90F /* Pods_MusicifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6621AB66B5C56A0FABCCEC /* Pods_MusicifyUITests.framework */; };
+		931EDA6D21DDE313000CBD48 /* LatestSongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931EDA6C21DDE313000CBD48 /* LatestSongsViewModel.swift */; };
+		931EDA6F21DDE31D000CBD48 /* LatestSongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931EDA6E21DDE31D000CBD48 /* LatestSongViewModel.swift */; };
+		931EDA7521DE0837000CBD48 /* LatestSongsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931EDA7421DE0837000CBD48 /* LatestSongsViewModelTests.swift */; };
 		9336A0AD21DC707100519700 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0AC21DC707100519700 /* Song.swift */; };
 		9336A0B321DC722400519700 /* MusicifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0B221DC722400519700 /* MusicifyAPI.swift */; };
 		9336A0B921DC760A00519700 /* SongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0B821DC760A00519700 /* SongTests.swift */; };
@@ -44,6 +47,9 @@
 		036D4707C53B34659ED11A94 /* Pods-MusicifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicifyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicifyTests/Pods-MusicifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		302828C38FEC9794B6EA1A9C /* Pods-Musicify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musicify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Musicify/Pods-Musicify.release.xcconfig"; sourceTree = "<group>"; };
 		4B3D3C2CC6A137960CF9DA95 /* Pods_Musicify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musicify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		931EDA6C21DDE313000CBD48 /* LatestSongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsViewModel.swift; sourceTree = "<group>"; };
+		931EDA6E21DDE31D000CBD48 /* LatestSongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongViewModel.swift; sourceTree = "<group>"; };
+		931EDA7421DE0837000CBD48 /* LatestSongsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsViewModelTests.swift; sourceTree = "<group>"; };
 		9336A0AC21DC707100519700 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9336A0B221DC722400519700 /* MusicifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicifyAPI.swift; sourceTree = "<group>"; };
 		9336A0B821DC760A00519700 /* SongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTests.swift; sourceTree = "<group>"; };
@@ -97,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		931EDA7021DE07BE000CBD48 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				931EDA7421DE0837000CBD48 /* LatestSongsViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		9336A0AA21DC703400519700 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +140,8 @@
 			children = (
 				936CDA5A21D4E4950079A6B2 /* LatestSongsViewController.swift */,
 				9336A0BA21DCA0B200519700 /* LatestSongTableViewCell.swift */,
+				931EDA6C21DDE313000CBD48 /* LatestSongsViewModel.swift */,
+				931EDA6E21DDE31D000CBD48 /* LatestSongViewModel.swift */,
 			);
 			path = LatestSongs;
 			sourceTree = "<group>";
@@ -186,6 +202,7 @@
 		936CDA6C21D4E4980079A6B2 /* MusicifyTests */ = {
 			isa = PBXGroup;
 			children = (
+				931EDA7021DE07BE000CBD48 /* ViewModels */,
 				9336A0B521DC75E900519700 /* Models */,
 				936CDA6D21D4E4980079A6B2 /* MusicifyTests.swift */,
 				936CDA6F21D4E4980079A6B2 /* Info.plist */,
@@ -442,7 +459,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9336A0AD21DC707100519700 /* Song.swift in Sources */,
+				931EDA6F21DDE31D000CBD48 /* LatestSongViewModel.swift in Sources */,
 				936CDA5B21D4E4950079A6B2 /* LatestSongsViewController.swift in Sources */,
+				931EDA6D21DDE313000CBD48 /* LatestSongsViewModel.swift in Sources */,
 				936CDA5921D4E4950079A6B2 /* AppDelegate.swift in Sources */,
 				9336A0B321DC722400519700 /* MusicifyAPI.swift in Sources */,
 				9336A0BB21DCA0B200519700 /* LatestSongTableViewCell.swift in Sources */,
@@ -455,6 +474,7 @@
 			files = (
 				9336A0B921DC760A00519700 /* SongTests.swift in Sources */,
 				936CDA6E21D4E4980079A6B2 /* MusicifyTests.swift in Sources */,
+				931EDA7521DE0837000CBD48 /* LatestSongsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
