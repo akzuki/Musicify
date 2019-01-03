@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		29BD310883C4E49A86C7E90F /* Pods_MusicifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6621AB66B5C56A0FABCCEC /* Pods_MusicifyUITests.framework */; };
+		931EDA7721DE16C8000CBD48 /* LatestSongsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931EDA7621DE16C8000CBD48 /* LatestSongsInteractor.swift */; };
+		931EDA7921DE1A2D000CBD48 /* LatestSongPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931EDA7821DE1A2D000CBD48 /* LatestSongPresenter.swift */; };
+		931EDA7B21DE1CA8000CBD48 /* LatestSongsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931EDA7A21DE1CA8000CBD48 /* LatestSongsWireframe.swift */; };
+		931EDA7E21DE2D5D000CBD48 /* LatestSongsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931EDA7D21DE2D5D000CBD48 /* LatestSongsInteractorTests.swift */; };
+		931EDA8121DE31C0000CBD48 /* LatestSongsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931EDA8021DE31C0000CBD48 /* LatestSongsPresenterTests.swift */; };
 		9336A0AD21DC707100519700 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0AC21DC707100519700 /* Song.swift */; };
 		9336A0B321DC722400519700 /* MusicifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0B221DC722400519700 /* MusicifyAPI.swift */; };
 		9336A0B921DC760A00519700 /* SongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0B821DC760A00519700 /* SongTests.swift */; };
@@ -44,6 +49,11 @@
 		036D4707C53B34659ED11A94 /* Pods-MusicifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicifyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicifyTests/Pods-MusicifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		302828C38FEC9794B6EA1A9C /* Pods-Musicify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musicify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Musicify/Pods-Musicify.release.xcconfig"; sourceTree = "<group>"; };
 		4B3D3C2CC6A137960CF9DA95 /* Pods_Musicify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musicify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		931EDA7621DE16C8000CBD48 /* LatestSongsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsInteractor.swift; sourceTree = "<group>"; };
+		931EDA7821DE1A2D000CBD48 /* LatestSongPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongPresenter.swift; sourceTree = "<group>"; };
+		931EDA7A21DE1CA8000CBD48 /* LatestSongsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsWireframe.swift; sourceTree = "<group>"; };
+		931EDA7D21DE2D5D000CBD48 /* LatestSongsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsInteractorTests.swift; sourceTree = "<group>"; };
+		931EDA8021DE31C0000CBD48 /* LatestSongsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsPresenterTests.swift; sourceTree = "<group>"; };
 		9336A0AC21DC707100519700 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9336A0B221DC722400519700 /* MusicifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicifyAPI.swift; sourceTree = "<group>"; };
 		9336A0B821DC760A00519700 /* SongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTests.swift; sourceTree = "<group>"; };
@@ -97,6 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		931EDA7C21DE2D48000CBD48 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				931EDA7D21DE2D5D000CBD48 /* LatestSongsInteractorTests.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		931EDA7F21DE31B0000CBD48 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				931EDA8021DE31C0000CBD48 /* LatestSongsPresenterTests.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 		9336A0AA21DC703400519700 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,12 +131,12 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		9336A0AB21DC705000519700 /* Models */ = {
+		9336A0AB21DC705000519700 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				9336A0AC21DC707100519700 /* Song.swift */,
 			);
-			path = Models;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		9336A0AF21DC717800519700 /* Modules */ = {
@@ -126,6 +152,9 @@
 			children = (
 				936CDA5A21D4E4950079A6B2 /* LatestSongsViewController.swift */,
 				9336A0BA21DCA0B200519700 /* LatestSongTableViewCell.swift */,
+				931EDA7621DE16C8000CBD48 /* LatestSongsInteractor.swift */,
+				931EDA7821DE1A2D000CBD48 /* LatestSongPresenter.swift */,
+				931EDA7A21DE1CA8000CBD48 /* LatestSongsWireframe.swift */,
 			);
 			path = LatestSongs;
 			sourceTree = "<group>";
@@ -171,7 +200,7 @@
 		936CDA5721D4E4950079A6B2 /* Musicify */ = {
 			isa = PBXGroup;
 			children = (
-				9336A0AB21DC705000519700 /* Models */,
+				9336A0AB21DC705000519700 /* Entities */,
 				9336A0AA21DC703400519700 /* Services */,
 				9336A0AF21DC717800519700 /* Modules */,
 				936CDA5821D4E4950079A6B2 /* AppDelegate.swift */,
@@ -186,6 +215,8 @@
 		936CDA6C21D4E4980079A6B2 /* MusicifyTests */ = {
 			isa = PBXGroup;
 			children = (
+				931EDA7F21DE31B0000CBD48 /* Presenters */,
+				931EDA7C21DE2D48000CBD48 /* Interactors */,
 				9336A0B521DC75E900519700 /* Models */,
 				936CDA6D21D4E4980079A6B2 /* MusicifyTests.swift */,
 				936CDA6F21D4E4980079A6B2 /* Info.plist */,
@@ -443,8 +474,11 @@
 			files = (
 				9336A0AD21DC707100519700 /* Song.swift in Sources */,
 				936CDA5B21D4E4950079A6B2 /* LatestSongsViewController.swift in Sources */,
+				931EDA7921DE1A2D000CBD48 /* LatestSongPresenter.swift in Sources */,
 				936CDA5921D4E4950079A6B2 /* AppDelegate.swift in Sources */,
 				9336A0B321DC722400519700 /* MusicifyAPI.swift in Sources */,
+				931EDA7721DE16C8000CBD48 /* LatestSongsInteractor.swift in Sources */,
+				931EDA7B21DE1CA8000CBD48 /* LatestSongsWireframe.swift in Sources */,
 				9336A0BB21DCA0B200519700 /* LatestSongTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +487,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931EDA8121DE31C0000CBD48 /* LatestSongsPresenterTests.swift in Sources */,
 				9336A0B921DC760A00519700 /* SongTests.swift in Sources */,
+				931EDA7E21DE2D5D000CBD48 /* LatestSongsInteractorTests.swift in Sources */,
 				936CDA6E21D4E4980079A6B2 /* MusicifyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

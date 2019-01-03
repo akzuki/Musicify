@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let latestSongsModule = LatestSongsWireframe.createLatestSongsModule()
+        let navigationController = UINavigationController(rootViewController: latestSongsModule)
+        navigationController.navigationBar.barTintColor = UIColor(red: 255/255, green: 119/255, blue: 143/255, alpha: 1)
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 20)!]
+        window =  UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
