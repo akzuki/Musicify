@@ -34,7 +34,7 @@ class LatestSongsViewModel: LatestSongsViewModelType {
     // MARK: - Dependencies
     fileprivate let musicifyAPIProvider: MoyaProvider<MusicifyAPI>
     
-    init(musicifyAPIProvider: MoyaProvider<MusicifyAPI> = MoyaProvider<MusicifyAPI>(stubClosure: MoyaProvider.delayedStub(2))) {
+    init(musicifyAPIProvider: MoyaProvider<MusicifyAPI> = MoyaProvider<MusicifyAPI>()) {
         self.musicifyAPIProvider = musicifyAPIProvider
     }
     
