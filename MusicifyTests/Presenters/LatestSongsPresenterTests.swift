@@ -46,6 +46,16 @@ class LatestSongsPresenterTests: XCTestCase {
         
     }
     
+    class MockLatestSongsWireframe: LatestSongsWireframeProtocol {
+        var song: Song?
+        var didCallShowLyrics = false
+        
+        func showLyrics(forSong song: Song) {
+            didCallShowLyrics = true
+            self.song = song
+        }
+    }
+    
     func testLoadLatestSongsSuccessfully() {
         let expectedSongs = [
             Song(
@@ -148,5 +158,30 @@ class LatestSongsPresenterTests: XCTestCase {
         XCTAssert(mockView.didCallStartLoading)
         // Assert that stopLoading is called
         XCTAssert(mockView.didCallStopLoading)
+    }
+    
+    func testShowLyrics() {
+        // Given
+        let expectedSong = Song(
+            id: 1,
+            name: "Back To You",
+            artist: "Selena Gomez",
+            releaseYear: "2018",
+            thumbnailURL: URL(string: "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg")!,
+            lyricsURL: URL(string: "https://www.azlyrics.com/lyrics/selenagomez/backtoyou.html")!
+        )
+        
+        let mockWireframe = MockLatestSongsWireframe()
+        let mockLatestSongsInteractor = LatestSongsInteractor()
+        let latestSongsPresenter = LatestSongsPresenterImpl(latestSongsInteractor: mockLatestSongsInteractor)
+        // When
+        latestSongsPresenter.wireframe = mockWireframe
+        latestSongsPresenter.showLyrics(forSong: expectedSong)
+        // Then
+        guard let song = mockWireframe.song else {
+            return XCTFail()
+        }
+        XCTAssertEqual(song, expectedSong)
+        XCTAssert(mockWireframe.didCallShowLyrics)
     }
 }

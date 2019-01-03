@@ -118,4 +118,42 @@ class LatestSongsInteractorTests: XCTestCase {
         }
         XCTAssertEqual(error, "Connection error")
     }
+    
+    func testLoadLatestSongsFailDueToInvalidJSONResponse() {
+        // Invalid JSON response
+        let actualSongsJSON = """
+            [
+                {}
+            ]
+        """
+        
+        let customEndpointClosure = { (target: MusicifyAPI) -> Endpoint in
+            return Endpoint(
+                url: URL(target: target).absoluteString,
+                sampleResponseClosure: { () -> EndpointSampleResponse in
+                    return .networkResponse(200, actualSongsJSON.data(using: .utf8)!)
+            },
+                method: target.method,
+                task: target.task,
+                httpHeaderFields: target.headers
+            )
+        }
+        // Given
+        let mockMusicifyAPI = MoyaProvider<MusicifyAPI>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider.immediatelyStub)
+        let latestSongsInteractor = LatestSongsInteractor(musicifyAPIProvider: mockMusicifyAPI)
+        // When
+        var actualSongs: [Song] = []
+        var errorMessage: String?
+        latestSongsInteractor.getLatestSongs(success: { (songs) in
+            actualSongs = songs
+        }) { (error) in
+            errorMessage = error
+        }
+        // Then
+        XCTAssertEqual(actualSongs, [])
+        guard let error = errorMessage else {
+            return XCTFail()
+        }
+        XCTAssertEqual(error, "JSON parsing error")
+    }
 }
