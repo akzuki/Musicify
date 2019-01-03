@@ -14,7 +14,7 @@ class LatestSongsViewController: UIViewController {
     @IBOutlet weak var latestSongsTableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    fileprivate let musicifyAPIProvider = MoyaProvider<MusicifyAPI>(stubClosure: MoyaProvider.delayedStub(2))
+    fileprivate let musicifyAPIProvider = MoyaProvider<MusicifyAPI>()
     fileprivate var latestSongs: [Song] = []
     
     // MARK: - View lifecycle
