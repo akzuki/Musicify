@@ -147,4 +147,44 @@ class LatestSongsPresenterTests: XCTestCase {
         // Assert that stopLoading is called
         XCTAssert(mockView.didCallStopLoading)
     }
+    
+    func testLoadLatestSongsFailDueToInvalidJSONResponse() {
+        // Invalid JSON response
+        let actualSongsJSON = """
+            [
+                {}
+            ]
+        """
+        
+        let customEndpointClosure = { (target: MusicifyAPI) -> Endpoint in
+            return Endpoint(
+                url: URL(target: target).absoluteString,
+                sampleResponseClosure: { () -> EndpointSampleResponse in
+                    return .networkResponse(200, actualSongsJSON.data(using: .utf8)!)
+            },
+                method: target.method,
+                task: target.task,
+                httpHeaderFields: target.headers
+            )
+        }
+        // Given
+        let mockMusicifyAPI = MoyaProvider<MusicifyAPI>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider.immediatelyStub)
+        let latestSongsPresenter = LatestSongPresenterImpl(musicifyAPIProvider: mockMusicifyAPI)
+        let mockView = MockLatestSongsView()
+        latestSongsPresenter.view = mockView
+        // When
+        latestSongsPresenter.loadLatestSongs()
+        // Then
+        
+        // Assert that error message exists
+        guard let errorMessage = mockView.errorMessage else {
+            return XCTFail()
+        }
+        // Assert that error message is correct
+        XCTAssertEqual(errorMessage, "JSON parsing error")
+        // Assert that startLoading is called
+        XCTAssert(mockView.didCallStartLoading)
+        // Assert that stopLoading is called
+        XCTAssert(mockView.didCallStopLoading)
+    }
 }
