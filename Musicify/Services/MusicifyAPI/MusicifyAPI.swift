@@ -9,9 +9,11 @@
 import Foundation
 import Moya
 
-enum MusicifyAPI: TargetType {
+enum MusicifyAPI {
     case latestSongs
-    
+}
+
+extension MusicifyAPI: TargetType {
     var baseURL: URL {
         return URL(string: "http://localhost:3000")!
     }
@@ -28,6 +30,17 @@ enum MusicifyAPI: TargetType {
         case .latestSongs:
             return .get
         }
+    }
+    
+    var task: Task {
+        switch self {
+        case .latestSongs:
+            return .requestPlain
+        }
+    }
+    
+    var headers: [String : String]? {
+        return nil
     }
     
     var sampleData: Data {
@@ -73,16 +86,5 @@ enum MusicifyAPI: TargetType {
                 .data(using: .utf8)!
             )
         }
-    }
-    
-    var task: Task {
-        switch self {
-        case .latestSongs:
-            return .requestPlain
-        }
-    }
-    
-    var headers: [String : String]? {
-        return nil
     }
 }
