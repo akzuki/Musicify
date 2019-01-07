@@ -37,16 +37,6 @@ extension LatestSongsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LatestSongTableViewCell") as! LatestSongTableViewCell
         
-        let song = Song(
-            id: 1,
-            name: "Back To You",
-            artist: "Selena Gomez",
-            releaseYear: "2018",
-            thumbnailURL: URL(string: "https://i.ytimg.com/vi/VY1eFxgRR-k/maxresdefault.jpg")!
-        )
-        
-        cell.configure(song: song)
-        
         return cell
     }
 }
