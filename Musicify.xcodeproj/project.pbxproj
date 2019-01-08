@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		29BD310883C4E49A86C7E90F /* Pods_MusicifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6621AB66B5C56A0FABCCEC /* Pods_MusicifyUITests.framework */; };
+		93224AEB21E4821900A5D118 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93224AEA21E4821900A5D118 /* AppState.swift */; };
+		93224AED21E482F200A5D118 /* LatestSongsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93224AEC21E482F200A5D118 /* LatestSongsState.swift */; };
+		93224AF021E4850A00A5D118 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93224AEF21E4850A00A5D118 /* AppReducer.swift */; };
+		93224AF221E4854A00A5D118 /* LatestSongsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93224AF121E4854A00A5D118 /* LatestSongsReducer.swift */; };
+		93224AF521E485CF00A5D118 /* LatestSongsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93224AF421E485CF00A5D118 /* LatestSongsActions.swift */; };
+		93224AFA21E48F4C00A5D118 /* LatestSongsReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93224AF921E48F4C00A5D118 /* LatestSongsReducerTests.swift */; };
 		9336A0AD21DC707100519700 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0AC21DC707100519700 /* Song.swift */; };
 		9336A0B321DC722400519700 /* MusicifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0B221DC722400519700 /* MusicifyAPI.swift */; };
 		9336A0B921DC760A00519700 /* SongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336A0B821DC760A00519700 /* SongTests.swift */; };
@@ -44,6 +50,12 @@
 		036D4707C53B34659ED11A94 /* Pods-MusicifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicifyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicifyTests/Pods-MusicifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		302828C38FEC9794B6EA1A9C /* Pods-Musicify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musicify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Musicify/Pods-Musicify.release.xcconfig"; sourceTree = "<group>"; };
 		4B3D3C2CC6A137960CF9DA95 /* Pods_Musicify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musicify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93224AEA21E4821900A5D118 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		93224AEC21E482F200A5D118 /* LatestSongsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsState.swift; sourceTree = "<group>"; };
+		93224AEF21E4850A00A5D118 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		93224AF121E4854A00A5D118 /* LatestSongsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsReducer.swift; sourceTree = "<group>"; };
+		93224AF421E485CF00A5D118 /* LatestSongsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsActions.swift; sourceTree = "<group>"; };
+		93224AF921E48F4C00A5D118 /* LatestSongsReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSongsReducerTests.swift; sourceTree = "<group>"; };
 		9336A0AC21DC707100519700 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9336A0B221DC722400519700 /* MusicifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicifyAPI.swift; sourceTree = "<group>"; };
 		9336A0B821DC760A00519700 /* SongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTests.swift; sourceTree = "<group>"; };
@@ -97,6 +109,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93224AE821E481A600A5D118 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		93224AE921E4820B00A5D118 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				93224AEA21E4821900A5D118 /* AppState.swift */,
+				93224AEC21E482F200A5D118 /* LatestSongsState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		93224AEE21E484E400A5D118 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				93224AEF21E4850A00A5D118 /* AppReducer.swift */,
+				93224AF121E4854A00A5D118 /* LatestSongsReducer.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		93224AF321E485AF00A5D118 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				93224AF421E485CF00A5D118 /* LatestSongsActions.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		93224AF621E48F2900A5D118 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				93224AF921E48F4C00A5D118 /* LatestSongsReducerTests.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
 		9336A0AA21DC703400519700 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +224,12 @@
 		936CDA5721D4E4950079A6B2 /* Musicify */ = {
 			isa = PBXGroup;
 			children = (
+				93224AF321E485AF00A5D118 /* Action */,
+				93224AEE21E484E400A5D118 /* Reducer */,
+				93224AE921E4820B00A5D118 /* State */,
 				9336A0AB21DC705000519700 /* Models */,
 				9336A0AA21DC703400519700 /* Services */,
+				93224AE821E481A600A5D118 /* Components */,
 				9336A0AF21DC717800519700 /* Modules */,
 				936CDA5821D4E4950079A6B2 /* AppDelegate.swift */,
 				936CDA5C21D4E4950079A6B2 /* Main.storyboard */,
@@ -186,6 +243,7 @@
 		936CDA6C21D4E4980079A6B2 /* MusicifyTests */ = {
 			isa = PBXGroup;
 			children = (
+				93224AF621E48F2900A5D118 /* Reducer */,
 				9336A0B521DC75E900519700 /* Models */,
 				936CDA6D21D4E4980079A6B2 /* MusicifyTests.swift */,
 				936CDA6F21D4E4980079A6B2 /* Info.plist */,
@@ -420,6 +478,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -427,6 +486,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,10 +501,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93224AED21E482F200A5D118 /* LatestSongsState.swift in Sources */,
+				93224AF521E485CF00A5D118 /* LatestSongsActions.swift in Sources */,
 				9336A0AD21DC707100519700 /* Song.swift in Sources */,
+				93224AF221E4854A00A5D118 /* LatestSongsReducer.swift in Sources */,
 				936CDA5B21D4E4950079A6B2 /* LatestSongsViewController.swift in Sources */,
 				936CDA5921D4E4950079A6B2 /* AppDelegate.swift in Sources */,
+				93224AEB21E4821900A5D118 /* AppState.swift in Sources */,
 				9336A0B321DC722400519700 /* MusicifyAPI.swift in Sources */,
+				93224AF021E4850A00A5D118 /* AppReducer.swift in Sources */,
 				9336A0BB21DCA0B200519700 /* LatestSongTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93224AFA21E48F4C00A5D118 /* LatestSongsReducerTests.swift in Sources */,
 				9336A0B921DC760A00519700 /* SongTests.swift in Sources */,
 				936CDA6E21D4E4980079A6B2 /* MusicifyTests.swift in Sources */,
 			);
