@@ -15,7 +15,7 @@ enum MusicifyAPI {
 
 extension MusicifyAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "https://api.myjson.com/")!
+        return URL(string: "https://api.myjson.com")!
     }
     
     var path: String {
